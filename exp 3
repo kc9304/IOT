@@ -1,0 +1,28 @@
+// C++ code
+//
+const int ledpin=5;
+const int idrpin=A0;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(5, OUTPUT);
+    pinMode(A0, INPUT);
+
+}
+
+void loop()
+{
+  int idrstatus=analogRead(idrpin);
+  Serial.println(idrstatus);
+  if(idrstatus<=200)
+  {
+  digitalWrite(ledpin, HIGH);
+    Serial.println(idrstatus);
+  }
+  else
+  {
+    digitalWrite(ledpin, LOW);
+    Serial.println(idrstatus);
+  }
+    
+}
